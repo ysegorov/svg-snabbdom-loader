@@ -1,6 +1,7 @@
 # svg-snabbdom-loader
 
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
+[![Build Status](https://travis-ci.org/ysegorov/svg-snabbdom-loader.svg?branch=master)](https://travis-ci.org/ysegorov/svg-snabbdom-loader)
 
 Webpack svg to [snabbdom](https://github.com/paldepind/snabbdom) vnode loader
 
