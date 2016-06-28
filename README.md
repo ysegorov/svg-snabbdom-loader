@@ -5,6 +5,9 @@
 Webpack svg to [snabbdom](https://github.com/paldepind/snabbdom) vnode loader
 
 
+[![NPM](https://nodei.co/npm/svg-snabbdom-loader.png)](https://www.npmjs.com/package/svg-snabbdom-loader)
+
+
 ## Installation
 
 ```shell
@@ -55,9 +58,6 @@ module.exports = {
     //...
 };
 ```
-
-
-[![NPM](https://nodei.co/npm/svg-snabbdom-loader.png)](https://www.npmjs.com/package/svg-snabbdom-loader)
 
 ## License
 
