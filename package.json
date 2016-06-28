@@ -1,0 +1,40 @@
+{
+  "name": "svg-snabbdom-loader",
+  "version": "0.1.0",
+  "description": "Webpack svg-files to snabbdom vdom loader",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Yuri Egorov",
+    "email": "ysegorov@gmail.com",
+    "url": "https://github.com/ysegorov"
+  },
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "loader-utils": "^0.2.15"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "istanbul": "^0.4.4",
+    "mocha": "^2.5.3"
+  },
+  "scripts": {
+    "test": "_mocha -- test/*.spec.js",
+    "cov": "istanbul cover _mocha -- -R spec test/*.spec.js"
+  },
+  "keywords": [
+    "svg",
+    "snabbdom",
+    "webpack",
+    "loader",
+    "vnode"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ysegorov/svg-snabbdom-loader.git"
+  },
+  "homepage": "https://github.com/ysegorov/svg-snabbdom-loader",
+  "bugs": {
+    "url": "https://github.com/ysegorov/svg-snabbdom-loader/issues"
+  }
+}
