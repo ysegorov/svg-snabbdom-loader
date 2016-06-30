@@ -22,8 +22,10 @@ $ npm install --save-dev svg-snabbdom-loader
 Loader supports following parameters:
 
 - `omitFill` used to omit `fill` attribute from generated VNode attributes
+  (defaults to keep `fill` attribute as is)
 - `omitKey` used to omit `key` attribute from generated top-level svg VNode
-  attributes
+  attributes (generated key defaults to `svg-{basename}` where `{basename}` is
+  filename without `.svg` extension)
 - `className` used to set `class` attribute for generated top-level svg VNode
   (defaults to `svg-icon`)
 
@@ -38,9 +40,10 @@ Specify in `webpack.config.js`:
 module.exports = {
     //...
     module: {
-        loaders: [
-            {test: /\.svg$/, loader: 'svg-snabbdom-loader'}
-        ]
+        loaders: [{
+            test: /\.svg$/,
+            loader: 'svg-snabbdom-loader'
+        }]
     },
     //...
 };
@@ -52,13 +55,50 @@ Chained with [svgo-loader](https://github.com/rpominov/svgo-loader):
 module.exports = {
     //...
     module: {
-        loaders: [
-            {test: /\.svg$/, loader: 'svg-snabbdom-loader!svgo-loader'}
-        ]
+        loaders: [{
+            test: /\.svg$/,
+            loader: 'svg-snabbdom-loader!svgo-loader'
+        }]
     },
     //...
 };
 ```
+
+With parameters:
+
+```javascript
+module.exports = {
+    //...
+    module: {
+        loaders: [{
+            test: /\.svg$/,
+            loader: 'svg-snabbdom-loader?omitFill=true&className=svg-icon-large!svgo-loader'
+        }]
+    },
+    //...
+};
+```
+
+Splitting filled and non-filled graphics:
+
+```javascript
+module.exports = {
+    //...
+    module: {
+        loaders: [{
+            test: /\.svg$/,
+            include: /src\/svg\/filled/
+            loader: 'svg-snabbdom-loader?className=svg-filled!svgo-loader'
+        }, {
+            test: /\.svg$/,
+            include: /src\/svg\/nonfilled/
+            loader: 'svg-snabbdom-loader?className=svg-non-filled!svgo-loader'
+        }]
+    },
+    //...
+};
+```
+
 
 ## License
 
