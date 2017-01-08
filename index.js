@@ -48,7 +48,7 @@ module.exports = function(content) {
 
     var query = loaderUtils.parseQuery(this.query);
     var key = 'svg-' + path.basename(this.resourcePath).slice(0, -4);
-    var text = '\n\'use strict\';\n' + 'var h = require(\'snabbdom/h\');\n';
+    var text = '\n\'use strict\';\n' + 'var h = require(\'snabbdom/h\').default;\n';
     var opts = {omitFill: query.omitFill};
 
     if (!query.omitKey) {
